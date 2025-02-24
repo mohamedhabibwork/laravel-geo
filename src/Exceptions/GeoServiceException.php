@@ -4,4 +4,6 @@ namespace Habib\LaravelGeo\Exceptions;
 
 use Exception;
 
-class GeoServiceException extends Exception {}
+class GeoServiceException extends Exception
+{
+}

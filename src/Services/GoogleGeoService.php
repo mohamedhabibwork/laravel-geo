@@ -11,7 +11,8 @@ class GoogleGeoService implements GeoServiceInterface
         protected string $apiKey,
         protected string $geocodeUrl,
         private string $directionsUrl,
-    ) {}
+    ) {
+    }
 
     public function geocode(string $address): ?array
     {
@@ -29,7 +30,7 @@ class GoogleGeoService implements GeoServiceInterface
             return null;
         }
 
-        if (! isset($data['results'][0]['geometry']['location'])) {
+        if (!isset($data['results'][0]['geometry']['location'])) {
             return null;
         }
 
@@ -52,7 +53,7 @@ class GoogleGeoService implements GeoServiceInterface
             return null;
         }
 
-        if (! isset($data['results'][0]['formatted_address'])) {
+        if (!isset($data['results'][0]['formatted_address'])) {
             return null;
         }
 
