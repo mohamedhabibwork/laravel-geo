@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Habib\LaravelGeo\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaravelGeoCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-geo';
 
     public $description = 'My command';
 

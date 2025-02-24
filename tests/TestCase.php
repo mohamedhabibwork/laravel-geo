@@ -1,10 +1,10 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+namespace Habib\LaravelGeo\Tests;
 
+use Habib\LaravelGeo\LaravelGeoServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use VendorName\Skeleton\SkeletonServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -13,14 +13,14 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'VendorName\\Skeleton\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'Habib\\LaravelGeo\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 
     protected function getPackageProviders($app)
     {
         return [
-            SkeletonServiceProvider::class,
+            LaravelGeoServiceProvider::class,
         ];
     }
 
@@ -28,10 +28,10 @@ class TestCase extends Orchestra
     {
         config()->set('database.default', 'testing');
 
-        /*
-         foreach (\Illuminate\Support\Facades\File::allFiles(__DIR__ . '/database/migrations') as $migration) {
-            (include $migration->getRealPath())->up();
-         }
-         */
+        // Set up mock configurations for geo services
+        config()->set('geo.services.google.api_key', 'test-api-key');
+        config()->set('geo.services.google.geocode_url', 'https://maps.googleapis.com/maps/api/geocode/json');
+        config()->set('geo.services.google.directions_url', 'https://maps.googleapis.com/maps/api/directions/json');
+        config()->set('geo.services.osrm.base_url', 'https://router.project-osrm.org');
     }
 }

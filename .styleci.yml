@@ -1,0 +1,23 @@
+preset: laravel
+
+finder:
+  exclude:
+    - "node_modules"
+    - "storage"
+    - "vendor"
+  name: "*.php"
+  not-name:
+    - "*.blade.php"
+    - "index.php"
+    - "server.php"
+
+enabled:
+  - method_separation
+  - align_double_arrow
+  - ordered_imports
+  - alpha_ordered_imports
+  - concat_with_spaces
+
+disabled:
+  - concat_without_spaces
+  - not_operator_with_successor_space
