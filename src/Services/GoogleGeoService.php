@@ -17,7 +17,7 @@ class GoogleGeoService implements GeoServiceInterface
     {
         $response = Http::withoutVerifying()->get($this->geocodeUrl, [
             'address' => $address,
-            'key' => $this->apiKey,
+            'key'     => $this->apiKey,
         ]);
 
         if ($response->failed()) {
@@ -40,7 +40,7 @@ class GoogleGeoService implements GeoServiceInterface
     {
         $response = Http::withoutVerifying()->get($this->geocodeUrl, [
             'latlng' => implode(',', $this->parsePoint($point)),
-            'key' => $this->apiKey,
+            'key'    => $this->apiKey,
         ]);
 
         if ($response->failed()) {
@@ -85,9 +85,9 @@ class GoogleGeoService implements GeoServiceInterface
     public function getDistance(array $origin, array $destination): ?array
     {
         $response = Http::withoutVerifying()->get($this->directionsUrl, [
-            'origin' => implode(',', $this->parsePoint($origin)),
+            'origin'      => implode(',', $this->parsePoint($origin)),
             'destination' => implode(',', $this->parsePoint($destination)),
-            'key' => $this->apiKey,
+            'key'         => $this->apiKey,
         ]);
 
         if ($response->failed()) {
@@ -100,9 +100,9 @@ class GoogleGeoService implements GeoServiceInterface
     public function getDirections(array $origin, array $destination): ?array
     {
         $response = Http::withoutVerifying()->get($this->directionsUrl, [
-            'origin' => implode(',', $this->parsePoint($origin)),
+            'origin'      => implode(',', $this->parsePoint($origin)),
             'destination' => implode(',', $this->parsePoint($destination)),
-            'key' => $this->apiKey,
+            'key'         => $this->apiKey,
         ]);
 
         if ($response->failed()) {

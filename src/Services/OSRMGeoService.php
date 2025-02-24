@@ -27,7 +27,7 @@ class OSRMGeoService implements GeoServiceInterface
     public function getDistance(array $origin, array $destination): ?array
     {
         $coordinates = $this->formatCoordinates($origin, $destination);
-        $url = "{$this->baseUrl}/route/v1/{$this->profile}/{$coordinates}?overview=false";
+        $url         = "{$this->baseUrl}/route/v1/{$this->profile}/{$coordinates}?overview=false";
 
         if (! $response = $this->makeRequest($url)) {
             return null;
@@ -46,7 +46,7 @@ class OSRMGeoService implements GeoServiceInterface
     public function getDirections(array $origin, array $destination): ?array
     {
         $coordinates = $this->formatCoordinates($origin, $destination);
-        $url = "{$this->baseUrl}/route/v1/{$this->profile}/{$coordinates}?overview=full&geometries=geojson";
+        $url         = "{$this->baseUrl}/route/v1/{$this->profile}/{$coordinates}?overview=full&geometries=geojson";
 
         if (! $response = $this->makeRequest($url)) {
             return null;

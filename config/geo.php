@@ -6,8 +6,8 @@ return [
 
     'services' => [
         'google' => [
-            'api_key' => env('GOOGLE_MAPS_API_KEY'),
-            'geocode_url' => env('GOOGLE_GEOCODE_URL', 'https://maps.googleapis.com/maps/api/geocode/json'),
+            'api_key'        => env('GOOGLE_MAPS_API_KEY'),
+            'geocode_url'    => env('GOOGLE_GEOCODE_URL', 'https://maps.googleapis.com/maps/api/geocode/json'),
             'directions_url' => env('GOOGLE_DIRECTIONS_URL', 'https://maps.googleapis.com/maps/api/directions/json'),
         ],
         'osrm' => [

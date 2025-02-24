@@ -13,8 +13,8 @@ class GeoServiceFactory
     {
         return match ($service) {
             'google' => app(GoogleGeoService::class),
-            'osrm' => app(OSRMGeoService::class),
-            default => throw new InvalidArgumentException("Invalid geocoding service: $service"),
+            'osrm'   => app(OSRMGeoService::class),
+            default  => throw new InvalidArgumentException("Invalid geocoding service: $service"),
         };
     }
 }

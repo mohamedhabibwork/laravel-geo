@@ -22,7 +22,7 @@ class OSRMGeoServiceTest extends TestCase
     {
         Http::fake([
             '*' => Http::response([
-                'code' => 'Ok',
+                'code'   => 'Ok',
                 'routes' => [
                     [
                         'distance' => 1000.0,

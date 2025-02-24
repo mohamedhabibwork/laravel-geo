@@ -24,7 +24,7 @@ class GoogleGeoServiceTest extends TestCase
     {
         Http::fake([
             '*' => Http::response([
-                'status' => 'OK',
+                'status'  => 'OK',
                 'results' => [
                     [
                         'geometry' => [
@@ -62,7 +62,7 @@ class GoogleGeoServiceTest extends TestCase
     {
         Http::fake([
             '*' => Http::response([
-                'status' => 'OK',
+                'status'  => 'OK',
                 'results' => [
                     [
                         'formatted_address' => '1600 Pennsylvania Avenue NW, Washington, DC 20500',
