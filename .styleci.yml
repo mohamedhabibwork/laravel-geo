@@ -12,10 +12,8 @@ finder:
     - "server.php"
 
 enabled:
-  - method_separation
   - align_double_arrow
   - ordered_imports
-  - alpha_ordered_imports
   - concat_with_spaces
 
 disabled:
