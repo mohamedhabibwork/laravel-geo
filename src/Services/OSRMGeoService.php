@@ -12,8 +12,7 @@ class OSRMGeoService implements GeoServiceInterface
     public function __construct(
         protected string $baseUrl,
         protected string $profile = 'car',
-    ) {
-    }
+    ) {}
 
     public function geocode(string $address): ?array
     {
@@ -30,7 +29,7 @@ class OSRMGeoService implements GeoServiceInterface
         $coordinates = $this->formatCoordinates($origin, $destination);
         $url = "{$this->baseUrl}/route/v1/{$this->profile}/{$coordinates}?overview=false";
 
-        if (!$response = $this->makeRequest($url)) {
+        if (! $response = $this->makeRequest($url)) {
             return null;
         }
 
