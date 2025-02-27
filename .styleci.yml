@@ -1,16 +1,9 @@
-preset: laravel
-
-finder:
-  exclude:
-    - "node_modules"
-    - "storage"
-    - "vendor"
-  name: "*.php"
-  not-name:
-    - "*.blade.php"
-    - "index.php"
-    - "server.php"
-
-disabled:
-  - concat_without_spaces
-  - not_operator_with_successor_space
+php:
+  preset: laravel
+  disabled:
+    - no_unused_imports
+  finder:
+    not-name:
+      - index.php
+js: true
+css: true
